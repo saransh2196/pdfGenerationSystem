@@ -10,10 +10,8 @@ const app = express();
 app.use(express.json({ limit: "5mb" }));
 app.use(cors());
 
-// Connect to database
 connectDB();
 
-// API Routes
 app.use("/templates", templateRoutes);
 app.use("/notices", noticeRoutes);
 app.use("/generate-pdf", pdfRoutes);

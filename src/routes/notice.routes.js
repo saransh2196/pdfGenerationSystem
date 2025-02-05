@@ -3,7 +3,6 @@ import Notice from "../models/notice.model.js";
 
 const router = express.Router();
 
-// Create a new notice
 router.post("/", async (req, res) => {
   try {
     const { recipientName, email, phone, data, templateId } = req.body;
@@ -21,7 +20,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Fetch all notices
 router.get("/", async (req, res) => {
   try {
     const notices = await Notice.find().populate("templateId");

@@ -4,7 +4,7 @@ const NoticeSchema = new mongoose.Schema({
   recipientName: String,
   email: String,
   phone: String,
-  data: Object, // Dynamic data for placeholders
+  data: Object,
   templateId: { type: mongoose.Schema.Types.ObjectId, ref: "Template" },
 });
 

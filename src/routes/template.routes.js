@@ -3,7 +3,6 @@ import Template from "../models/template.model.js";
 
 const router = express.Router();
 
-// Create a new HTML template
 router.post("/", async (req, res) => {
   try {
     const { name, content } = req.body;
@@ -15,7 +14,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Fetch all templates
 router.get("/", async (req, res) => {
   try {
     const templates = await Template.find();

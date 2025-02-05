@@ -16,23 +16,3 @@ router.post("/", async (req, res) => {
 });
 
 export default router;
-
-// import express from "express";
-// import { generatePDF } from "../services/pdf.service.js";
-
-// const router = express.Router();
-
-// // Generate PDF from notice data
-// router.post("/", async (req, res) => {
-//   try {
-//     const { noticeId } = req.body;
-//     const pdfBuffer = await generatePDF(noticeId);
-
-//     res.setHeader("Content-Type", "application/pdf");
-//     res.send(pdfBuffer);
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
-
-// export default router;
