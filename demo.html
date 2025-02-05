@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Payment Reminder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .notice-container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+      }
+      h2 {
+        color: #333333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #555555;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+      .highlight {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777777;
+      }
+      .footer a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .logo {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notice-container">
+      <img
+        src="https://via.placeholder.com/100"
+        alt="ABC Finance Logo"
+        class="logo"
+      />
+      <h2>Loan Payment Reminder</h2>
+      <p>Dear <span class="highlight">{{recipientName}}</span>,</p>
+      <p>
+        This is a friendly reminder that your loan of
+        <span class="highlight">₹{{amount}}</span> is due on
+        <span class="highlight">{{dueDate}}</span>.
+      </p>
+      <p>
+        Please ensure that the payment is made on or before the due date to
+        avoid any late fees or penalties.
+      </p>
+      <p>If you have already made the payment, kindly disregard this notice.</p>
+      <p>
+        For any queries or assistance, feel free to contact our customer support
+        team at
+        <a href="mailto:support@abcfinance.com">support@abcfinance.com</a> or
+        call us at <a href="tel:+911234567890">+91 123 456 7890</a>.
+      </p>
+      <p>
+        Thank you for choosing ABC Finance. We appreciate your prompt attention
+        to this matter.
+      </p>
+      <div class="footer">
+        <p>Best Regards,</p>
+        <p><strong>ABC Finance</strong></p>
+        <p><a href="https://www.abcfinance.com">www.abcfinance.com</a></p>
+      </div>
+    </div>
+  </body>
+</html>
