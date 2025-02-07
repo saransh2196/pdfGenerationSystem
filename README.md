@@ -12,21 +12,21 @@ A Node.js service that dynamically generates PDFs from HTML templates, stores th
 
 notice-pdf-system/
 │── public/
-│   ├── pdfs/          # Stores generated PDFs
+│ ├── pdfs/ # Stores generated PDFs
 │── src/
-│   ├── config/
-│   │   ├── db.js      # MongoDB connection
-│   ├── models/
-│   │   ├── template.model.js
-│   │   ├── notice.model.js
-│   ├── routes/
-│   │   ├── template.routes.js
-│   │   ├── notice.routes.js
-│   │   ├── pdf.routes.js
-│   ├── services/
-│   │   ├── pdf.service.js  # PDF generation logic
-│   ├── app.js              # Main server file
-│── .env                    # Environment variables (not committed)
+│ ├── config/
+│ │ ├── db.js # MongoDB connection
+│ ├── models/
+│ │ ├── template.model.js
+│ │ ├── notice.model.js
+│ ├── routes/
+│ │ ├── template.routes.js
+│ │ ├── notice.routes.js
+│ │ ├── pdf.routes.js
+│ ├── services/
+│ │ ├── pdf.service.js # PDF generation logic
+│ ├── app.js # Main server file
+│── .env # Environment variables (not committed)
 │── .gitignore
 │── package.json
 │── README.md
@@ -56,26 +56,28 @@ Description: Stores an HTML template for generating PDFs.
 
 Request Body (JSON)
 {
-  "name": "Loan Payment Reminder",
-  "content": "<html><body><h2>Loan Payment Reminder</h2><p>Dear {{recipientName}},</p><p>Your loan of ₹{{amount}} is due on {{dueDate}}.</p></body></html>"
+"name": "Loan Payment Reminder",
+"content": "<html><body><h2>Loan Payment Reminder</h2><p>Dear {{recipientName}},</p><p>Your loan of ₹{{amount}} is due on {{dueDate}}.</p></body></html>"
 }
 Response:
 { "message": "Template saved successfully" }
+
+Note: Refer demo.html for template content. A template with minimal html with css is there which you can use as a template.
 
 2️⃣ Create a Notice
 Endpoint: POST /notices
 Description: Stores recipient-specific data for notice generation.
 Request Body (JSON)
 {
-  "recipientName": "Rahul Sharma",
-  "email": "rahul@example.com",
-  "phone": "9876543210",
-  "data": {
-    "recipientName": "Rahul Sharma",
-    "amount": "50,000",
-    "dueDate": "2025-02-10"
-  },
-  "templateId": "<INSERT_TEMPLATE_ID>"  // You can get template id from mongoDB in the template collection
+"recipientName": "Rahul Sharma",
+"email": "rahul@example.com",
+"phone": "9876543210",
+"data": {
+"recipientName": "Rahul Sharma",
+"amount": "50,000",
+"dueDate": "2025-02-10"
+},
+"templateId": "<INSERT_TEMPLATE_ID>" // You can get template id from mongoDB in the template collection
 }
 Response:
 { "message": "Notice saved successfully" }
@@ -84,11 +86,11 @@ Response:
 Endpoint: POST /generate-pdf
 Description: Generates a PDF for a given notice and provides a public download link.
 Request Body (JSON)
-{ "noticeId": "<INSERT_NOTICE_ID>" }  / You can get notice id from mongoDB in the notice collection
+{ "noticeId": "<INSERT_NOTICE_ID>" } / You can get notice id from mongoDB in the notice collection
 Response:
 {
-  "message": "PDF Generated",
-  "pdfUrl": "http://localhost:5000/pdfs/Notice_65e1ab8f7c4a3a6e5b9e2c31.pdf"
+"message": "PDF Generated",
+"pdfUrl": "http://localhost:5000/pdfs/Notice_65e1ab8f7c4a3a6e5b9e2c31.pdf"
 }
 
 🔗 Now, open the pdfUrl in a browser to view/download the PDF.
